@@ -6,5 +6,8 @@ import pandas as pd
 base = pd.read_csv('../base/segmentation.test')
 
 #print(base.readlines())
-print(base)
+
+labels = base.loc[:]['CLASSE']
+
+print(labels)
 
