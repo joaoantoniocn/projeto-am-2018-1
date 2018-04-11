@@ -1,13 +1,13 @@
 import numpy as np
 import pandas as pd
 
-#base = open("../base/segmentation.test", "r")
 
-base = pd.read_csv('../base/segmentation.test')
+base = np.genfromtxt('segmentation.data.txt',delimiter=',', dtype=np.str)
 
-#print(base.readlines())
 
-labels = base.loc[:]['CLASSE']
+labels = base[1:,0]
+complet_view = base[1:,1:]
 
-print(labels)
+shape_view = complet_view[:,:9]
 
+rgb_view =  complet_view[:,9:]
