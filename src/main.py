@@ -26,10 +26,9 @@ rgb_view =  rgb_view.astype(float)
 # ------------------
 
 
-
-
-def calculateS2(X):
-
+def get_s2(X):
+    # calcula o s2 da base de dados X
+    
     distancias=[]
 
     for i in range(X.shape[0]-1):
@@ -44,15 +43,17 @@ def calculateS2(X):
     return s2
 
 
-def K(x_i, x_j, s2):
-
+def k(x_i, x_j, s2):
+    # Função de distância do artigo
+    
     distancia = sum(pow(x_i - x_j, 2))
     k = -1 * (distancia/(s2))
     k = pow(np.e, k)
     
     return k
 
-def getCentroides(X, classes):
+def gerar_centroides(X, classes):
+    # centroides é uma matriz onde as linhas são os centroides e as colunas os atributos
     # linhas = centroides
     # colunas = atributos
     
@@ -60,4 +61,13 @@ def getCentroides(X, classes):
 
     return centroides
 
-       
+def calcula_p(X, centroides):
+    # P é uma matriz 3d onde
+    # P[i] retorna a i-ésima região
+    # P[i][j] retorna a j-ésima amostra da i-ésima região
+    # P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
+    
+    p = []
+
+   
+ 
