@@ -47,7 +47,7 @@ def calculateS2(X):
 def K(x_i, x_j, s2):
 
     distancia = sum(pow(x_i - x_j, 2))
-    k = -1 * (distancia/(2*s2))
+    k = -1 * (distancia/(s2))
     k = pow(np.e, k)
     
     return k
