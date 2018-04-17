@@ -44,6 +44,12 @@ def calculateS2(X):
     return s2
 
 
-s2 = calculateS2(shape_view)
+def K(x_i, x_j, s2):
+
+    distancia = sum(pow(x_i - x_j, 2))
+    k = -1 * (distancia/(2*s2))
+    k = pow(np.e, k)
+    
+    return k
 
        
