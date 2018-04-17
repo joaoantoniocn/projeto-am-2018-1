@@ -52,4 +52,12 @@ def K(x_i, x_j, s2):
     
     return k
 
+def getCentroides(X, classes):
+    # linhas = centroides
+    # colunas = atributos
+    
+    centroides = np.random.rand(classes, X.shape[1])
+
+    return centroides
+
        
