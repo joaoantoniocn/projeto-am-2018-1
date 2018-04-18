@@ -1,14 +1,11 @@
 import numpy as np
 import pandas as pd
 from scipy.spatial import distance
-
-##
-##def distance(x_i, x_j):
-##    return pow(x_i - x_j,2)
-##
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 
 # ------------------ Load database ---------------
-base = np.genfromtxt('./segmentation.data.txt',delimiter=',', dtype=np.str)
+base = np.genfromtxt('C:/Users/jlpl/Desktop/segmentation.data.txt',delimiter=',', dtype=np.str)
 # ------------------ 
 
 # ------------------ Separate database ---------------
@@ -92,18 +89,23 @@ def calcula_p(X, centroides):
                 valor_minimo = distancia
                 indice_valor_minimo = j
 
-        p[indice_valor_minimo].append(X[i])
+        p[indice_valor_minimo].append(np.ndarray.tolist(X[i]))
         
     return p
 
+# --------------------------------------------------------------
 
-                
-#centroides = gerar_centroides(shape_view, 7)
 
-from sklearn.decomposition import PCA
+centroides = gerar_centroides(shape_view, 7)
+p = calcula_p(shape_view, centroides)
+
 pca = PCA(n_components=2)
-new_data = pca.fit(shape_view).transform(shape_view)
+pca = pca.fit(shape_view)
 
-
-
-
+for i in range(len(p)):
+    p_i = pca.transform(p[i])
+    p_a = np.array(p_i)
+    plt.plot(p_a[:,0], p_a[:,1], 'ro', linewidth=0.03)
+    plt.plot(p_a[0][0], p_a[0][1], 'g^', linewidth=0.03)
+    
+plt.show()
