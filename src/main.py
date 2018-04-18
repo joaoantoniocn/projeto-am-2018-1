@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-base = np.genfromtxt('segmentation.data.txt',delimiter=',', dtype=np.str)
+base = np.genfromtxt('../base/segmentation.test',delimiter=',', dtype=np.str)
 
 
 labels = base[1:,0]
