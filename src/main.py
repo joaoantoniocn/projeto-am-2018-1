@@ -8,7 +8,7 @@ from scipy.spatial import distance
 ##
 
 # ------------------ Load database ---------------
-base = np.genfromtxt('../base/segmentation.test',delimiter=',', dtype=np.str)
+base = np.genfromtxt('./segmentation.data.txt',delimiter=',', dtype=np.str)
 # ------------------ 
 
 # ------------------ Separate database ---------------
@@ -56,16 +56,54 @@ def gerar_centroides(X, classes):
     # colunas = atributos
     
     centroides = np.random.rand(classes, X.shape[1])
-
-    return centroides
+    
+    return np.ndarray.tolist(centroides)
 
 def calcula_p(X, centroides):
+    # X é a base de dados
     # P é uma matriz 3d onde
     # P[i] retorna a i-ésima região
     # P[i][j] retorna a j-ésima amostra da i-ésima região
     # P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
+    # p[i][0] = centroide da i-ésima região
     
-    p = []
+    p = {}
+    s2 = get_s2(X)
 
-   
- 
+    for i in range(len(centroides)):
+        p[i] = [centroides[i]]
+    
+    for i in range(len(X)):
+        
+        valor_minimo = -1
+        indice_valor_minimo = -1
+        
+        for j in range(len(centroides)):
+            
+            distancia = 2*(1 - k(X[i], centroides[j], s2))
+
+            if (j == 0):
+                
+               valor_minimo = distancia
+               indice_valor_minimo = j
+               
+            elif (distancia<valor_minimo):
+                
+                valor_minimo = distancia
+                indice_valor_minimo = j
+
+        p[indice_valor_minimo].append(X[i])
+        
+    return p
+
+
+                
+#centroides = gerar_centroides(shape_view, 7)
+
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+new_data = pca.fit(shape_view).transform(shape_view)
+
+
+
+
