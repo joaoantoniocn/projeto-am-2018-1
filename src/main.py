@@ -1,11 +1,10 @@
 import numpy as np
-import pandas as pd
 from scipy.spatial import distance
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 
 # ------------------ Load database ---------------
-base = np.genfromtxt('C:/Users/jlpl/Desktop/segmentation.data.txt',delimiter=',', dtype=np.str)
+base = np.genfromtxt('../base/segmentation.test',delimiter=',', dtype=np.str)
 # ------------------ 
 
 # ------------------ Separate database ---------------
@@ -74,7 +73,7 @@ def calcula_p(X, centroides):
         
         valor_minimo = -1
         indice_valor_minimo = -1
-        
+
         for j in range(len(centroides)):
             
             distancia = 2*(1 - k(X[i], centroides[j], s2))
