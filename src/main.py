@@ -21,6 +21,9 @@ rgb_view = complet_view[:,9:]
 rgb_view = rgb_view.astype(float)
 # ------------------
 
+# ------------------ Funções ------------------
+
+# ------------------
 def atualiza_s2(p, centroides, s2,y):
 # calcula o novo vetor de hyper-parametros s2
 
@@ -64,16 +67,16 @@ def atualiza_s2(p, centroides, s2,y):
             #print(soma_centroide_h)
         parte_cima = pow(prod_centroide_h, 1/(len(s2))) * pow(y,  1/(len(s2)))
         parte_baixo = soma_centroide_j
-        print("DIVIDINDO")
-        print(parte_cima)
-        print(parte_baixo)
+       # print("DIVIDINDO")
+       # print(parte_cima)
+       # print(parte_baixo)
         s2_j = parte_cima/parte_baixo
         novo_s2.append(1/s2_j)
-        print("add s2")
-        input()
+       # print("add s2")
+        #input()
     return novo_s2
 # ------------------    
-
+# ------------------
 def inicializa_s2(X):
     # calcula o s2 da base de dados X
     
@@ -94,7 +97,7 @@ def inicializa_s2(X):
             
     return s2
 # ------------------
-
+# ------------------
 def get_y(s2):
 
     y = 1
@@ -105,7 +108,7 @@ def get_y(s2):
     return y
         
 # ------------------
-
+# ------------------
 def calcula_k(x_i, x_j, s2):
     # Função (9) de distância do artigo 
 
@@ -120,7 +123,7 @@ def calcula_k(x_i, x_j, s2):
     
     return k
 # ------------------
-
+# ------------------
 def gerar_centroides(X, classes):
     # centroides é uma matriz onde as linhas são os centroides e as colunas os atributos
     # linhas = centroides
@@ -155,7 +158,7 @@ def gerar_centroides(X, classes):
     
     return centroides
 # ------------------
-
+# ------------------
 def calcula_p(X, centroides):
     # X é a base de dados
     # P é uma matriz 3d onde
@@ -198,7 +201,45 @@ def calcula_p(X, centroides):
         
     return p
 # ------------------
+# ------------------
+def normaliza(X):
+
+    media = []
+    desvio = []
+
+    for i in range(len(X[0])):
+        media.append(np.mean(X[:, i]))
+        desvio.append(np.std(X[:, i]))
+
+    for i in range(len(X)):
+
+        for j in range(len(X[0])):
+            X[i, j] = (X[i, j] - media[j]) / desvio[j]
+
+
+    return X
+# ------------------
+# ------------------
+def remove_coluna(X, index):
+
+    part1 = X[:, :index]
+    part2 = X[:, index+1:]
+
+    return np.concatenate([part1, part2], axis=1)
+# ------------------
+
+# ------------------ Preparando Dados ------------------
+shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
+shape_view = normaliza(shape_view)
+
+rgb_view = normaliza(rgb_view)
+
+complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
+complet_view = normaliza(complet_view)
+
 # --------------------------------------------------------------
+
+
 
 centroides = gerar_centroides(shape_view, 7)
 p = calcula_p(shape_view, centroides)
