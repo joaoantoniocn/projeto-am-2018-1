@@ -101,7 +101,7 @@ def inicializa_s2(X):
 def get_y(s2):
 
     y = 1
-    print(type(s2))
+
     for i in range(len(s2)):
         y *= 1/s2[i]
 
@@ -196,10 +196,10 @@ def atualiza_centroides(p, antigos_centroides, s2):
 # ------------------
 def calcula_p(X, centroides, s2):
     # X é a base de dados
-    # P é uma matriz 3d onde
-    # P[i] retorna a i-ésima região
-    # P[i][j] retorna a j-ésima amostra da i-ésima região
-    # P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
+        # P é uma matriz 3d onde
+        # P[i] retorna a i-ésima região
+        # P[i][j] retorna a j-ésima amostra da i-ésima região
+        # P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
 
     
     p = {}
@@ -234,6 +234,65 @@ def calcula_p(X, centroides, s2):
         p[i].remove(p[i][0])
         
     return p
+# ------------------
+# ------------------
+def atualiza_p(p, centroides, s2):
+    # atualiza_p atualiza as regiões p de acordo com as novas posições de cada centroide
+    # o retorno dessa função é a nova matriz de regiões p e a quantidade de vezes que ela foi atualizada em comparação a antiga matriz p
+
+    # P é uma matriz 3d onde
+    # P[i] retorna a i-ésima região
+    # P[i][j] retorna a j-ésima amostra da i-ésima região
+    # P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
+
+    p_novo = {}
+    atualizacoes = 0
+
+    # Iniciando cada região com seu centroide
+    for i in range(len(centroides)):
+        p_novo[i] = [centroides[i]]
+
+    # todas as regiões
+    for i in range(len(p)):
+
+        # todos as amostras de cada região
+        for j in range(len(p[i])):
+
+            valor_minimo = -1
+            indice_valor_minimo = -1
+
+            # calcula a distancia da amostra com todos os novos centroides
+            for k in range(len(centroides)):
+
+                distancia = 2*(1 - calcula_k(p[i][j], centroides[k], s2))
+
+                if (k == 0):
+
+                    valor_minimo = distancia
+                    indice_valor_minimo = k
+
+                elif (distancia < valor_minimo):
+
+                    valor_minimo = distancia
+                    indice_valor_minimo = k
+
+            if(indice_valor_minimo != i):
+                atualizacoes += 1
+
+            p_novo[indice_valor_minimo].append(p[i][j])
+
+
+    # Retirando o centroide de cada região
+    for i in range(len(centroides)):
+        p_novo[i].remove(p_novo[i][0])
+
+    return p_novo, atualizacoes
+# ------------------
+# ------------------
+def imprime_p(p):
+    print("Quantidade de elementos por particao")
+    for i in range(len(p)):
+        print("Particao ", i, ": ", len(p[i]))
 # ------------------
 # ------------------
 def normaliza(X):
@@ -275,13 +334,33 @@ centroides = gerar_centroides(shape_view, 7)
 s2 = inicializa_s2(shape_view)
 y = get_y(s2)
 p = calcula_p(shape_view, centroides, s2)
+imprime_p(p)
+print(s2)
 # ------------------- Treinando -------------------------
-print("s2 antigos")
+
+atualizacoes = 1
+
+while(atualizacoes>0):
+
+    centroides = atualiza_centroides(p, centroides, s2)
+    s2 = atualiza_s2(p, centroides, s2, y)
+    y = get_y(s2)
+    p, atualizacoes = atualiza_p(p, centroides, s2)
+    print(atualizacoes)
+    print(s2)
+    imprime_p(p)
+    input()
+
+print("---------- Treinamento terminado ---------")
+print("Centroides:")
+print(centroides)
+print()
+print("Hyper-Parametros - s2")
 print(s2)
-centroides = atualiza_centroides(p, centroides, s2)
-s2 = atualiza_s2(p, centroides, s2, y)
-print("s2 novos")
-print(s2)
+print()
+
+
+# olhar função de atualizar o s2
 # -------------------------------------------------------
 
 ##
