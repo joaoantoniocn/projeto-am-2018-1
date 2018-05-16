@@ -24,6 +24,18 @@ rgb_view = rgb_view.astype(float)
 # ------------------ Funções ------------------
 
 # ------------------
+# ------------------
+def atualiza_s2_somatorio(p, centroides, s2, caracteristica):
+
+    result = 0
+
+    for i in range(len(centroides)):
+        for k in range(len(p[i])):
+            result += (calcula_k(p[i][k], centroides[i], s2) * pow((p[i][k][caracteristica] - centroides[i][caracteristica]), 2))
+            
+    return result
+# ------------------
+# ------------------
 def atualiza_s2(p, centroides, s2,y):
 # calcula o novo vetor de hyper-parametros s2
 
@@ -32,46 +44,20 @@ def atualiza_s2(p, centroides, s2,y):
     for j in range(len(s2)):
     # calculando o j-ésimo s2
         s2_j = 0
-        nominador = 0 # parte de cima da fração
-        denominador = 0 # parte de baixo da fração
-        prod_centroide_h = 1
-        soma_centroide_j = 0
-    
+        parte_baixo = atualiza_s2_somatorio(p, centroides, s2, j)
+        produtorio = 1
+        
         for h in range(len(s2)):
-        # Produtorio do h-ésimo atributo
-        # len(p) = len(s2), p = número de atributos
-            soma_centroide_h = 0
-            soma_centroide_j = 0
-            
-            for i in range(len(centroides)):
-            # passando por todos os centroides
-                soma_dist_h = 0
-                soma_dist_j = 0
-                
-                for k in range(len(p[i])):
-                # passando por todas as amostras da região p_i
-                    
-                    dist_centroide = calcula_k(p[i][k], centroides[i], s2)
-                    
-                    dist_atributo_h = pow(p[i][k][h] - centroides[i][h], 2)                    
-                    dist_atributo_j = pow(p[i][k][j] - centroides[i][j], 2)                    
-                    soma_dist_h += dist_centroide * dist_atributo_h                    
-                    soma_dist_j += dist_centroide * dist_atributo_j
-                    
+            produtorio *= atualiza_s2_somatorio(p, centroides, s2, h)   
+        
+        parte_cima = pow(y, (1/len(s2))) * pow(produtorio, (1/len(s2)))
 
-                soma_centroide_h += soma_dist_h
-                soma_centroide_j += soma_dist_j
+        if((parte_baixo != 0) and (parte_cima!= 0)):         
+            s2_j = 1/(parte_cima/parte_baixo)
+        else:
+            s2_j = s2[j]
             
-            prod_centroide_h *= soma_centroide_h
-            #print("soma_centroide_h")
-            #print(soma_centroide_h)
-        parte_cima = pow(prod_centroide_h, 1/(len(s2))) * pow(y,  1/(len(s2)))
-        parte_baixo = soma_centroide_j
-       # print("DIVIDINDO")
-       # print(parte_cima)
-       # print(parte_baixo)
-        s2_j = parte_cima/parte_baixo
-        novo_s2.append(1/s2_j)
+        novo_s2.append(s2_j)
        # print("add s2")
         #input()
     return novo_s2
@@ -118,7 +104,7 @@ def calcula_k(x_i, x_j, s2):
         distancia += pow((x_i[i] - x_j[i]), 2)/s2[i]
         
 ##    distancia = sum(np.ndarray.tolist(np.divide(pow(x_i - x_j, 2),s2)))
-    k = -1 * (distancia)
+    k = (-1/2) * (distancia)
     k = pow(np.e, k)
     
     return k
@@ -335,6 +321,7 @@ s2 = inicializa_s2(shape_view)
 y = get_y(s2)
 p = calcula_p(shape_view, centroides, s2)
 imprime_p(p)
+print("s2 inicializado")
 print(s2)
 # ------------------- Treinando -------------------------
 
@@ -346,18 +333,19 @@ while(atualizacoes>0):
     s2 = atualiza_s2(p, centroides, s2, y)
     y = get_y(s2)
     p, atualizacoes = atualiza_p(p, centroides, s2)
-    print(atualizacoes)
-    print(s2)
+
+    print("atualizações: ", atualizacoes)
+    print("s2: ", s2)    
     imprime_p(p)
     input()
 
-print("---------- Treinamento terminado ---------")
-print("Centroides:")
-print(centroides)
-print()
-print("Hyper-Parametros - s2")
-print(s2)
-print()
+#print("---------- Treinamento terminado ---------")
+#print("Centroides:")
+#print(centroides)
+#print()
+#print("Hyper-Parametros - s2")
+#print(s2)
+#print()
 
 
 # olhar função de atualizar o s2
@@ -374,4 +362,6 @@ print()
 ##    plt.plot(p_a[0][0], p_a[0][1], 'g^', linewidth=0.03)
 ##    
 ##plt.show()
+
+
 
