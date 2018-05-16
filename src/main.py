@@ -25,6 +25,20 @@ rgb_view = rgb_view.astype(float)
 
 # ------------------
 # ------------------
+def funcao_objetivo(p, centroides, s2):
+    # define quão boa foi nossa solução
+    # quanto menor a função objetivo melhor a solução
+    
+    result = 0
+
+    for i in range(len(centroides)):
+        for k in range(len(p[i])):
+            result += 2*(1 - calcula_k(p[i][k], centroides[i], s2))
+     
+
+    return result
+# ------------------
+# ------------------
 def atualiza_s2_somatorio(p, centroides, s2, caracteristica):
 
     result = 0
@@ -331,13 +345,13 @@ while(atualizacoes>0):
 
     centroides = atualiza_centroides(p, centroides, s2)
     s2 = atualiza_s2(p, centroides, s2, y)
-    y = get_y(s2)
     p, atualizacoes = atualiza_p(p, centroides, s2)
 
     print("atualizações: ", atualizacoes)
-    print("s2: ", s2)    
-    imprime_p(p)
-    input()
+    print("Função objetivo: ", funcao_objetivo(p, centroides, s2))
+    #print("s2: ", s2)    
+    #imprime_p(p)
+    
 
 #print("---------- Treinamento terminado ---------")
 #print("Centroides:")
@@ -362,6 +376,3 @@ while(atualizacoes>0):
 ##    plt.plot(p_a[0][0], p_a[0][1], 'g^', linewidth=0.03)
 ##    
 ##plt.show()
-
-
-
