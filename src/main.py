@@ -125,6 +125,7 @@ def calcula_k(x_i, x_j, s2):
 # ------------------
 # ------------------
 def gerar_centroides(X, classes):
+    # gerar_centroides é usado para inicializar os centroides de forma aleatória
     # centroides é uma matriz onde as linhas são os centroides e as colunas os atributos
     # linhas = centroides
     # colunas = atributos
@@ -150,25 +151,58 @@ def gerar_centroides(X, classes):
         centroide=[]
         for j in range(len(maximos)):
 
-            centroide.append(randint(int(minimos[j]), int(maximos[j])))
+            centroide.append(random.uniform(int(minimos[j]), int(maximos[j])))
 
         centroides.append(centroide)
-    
+
     #centroides = np.random.rand(classes, X.shape[1])
     
     return centroides
 # ------------------
 # ------------------
-def calcula_p(X, centroides):
+def atualiza_centroides(p, antigos_centroides, s2):
+# atualizar_centroides vai calcular a nova posição dos centroides em relação a sua região p[i]
+# p = matriz 3d onde
+# P[i] retorna a i-ésima região
+# P[i][j] retorna a j-ésima amostra da i-ésima região
+# P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
+
+    centroides = []
+
+    for i in range(len(antigos_centroides)):
+
+        g_i = antigos_centroides[i]
+
+        parte_cima = 0
+        parte_baixo = 0
+
+        for k in range(len(p[i])):
+            x_k = p[i][k]
+            distancia = calcula_k(x_k, g_i, s2)
+            parte_cima += distancia * np.array(x_k)
+            parte_baixo += distancia
+
+
+        # esse if não está no artigo, mas foi uma adaptação que achei pra resolver o caso em que a partição P não tem amostras suficientes para atualizar a posição do seu centroide
+        if(parte_baixo == 0):
+            centroides.append(g_i)
+        else:
+            centroides.append(np.ndarray.tolist(parte_cima/parte_baixo))
+
+
+
+    return centroides
+# ------------------
+# ------------------
+def calcula_p(X, centroides, s2):
     # X é a base de dados
     # P é uma matriz 3d onde
     # P[i] retorna a i-ésima região
     # P[i][j] retorna a j-ésima amostra da i-ésima região
     # P[i][j][k] retorna a k-ésima característica da j-ésima amostra da i-ésima região
-    # p[i][0] = centroide da i-ésima região
+
     
     p = {}
-    s2 = inicializa_s2(X)
 
     # Iniciando cada região com seu centroide
     for i in range(len(centroides)):
@@ -203,18 +237,17 @@ def calcula_p(X, centroides):
 # ------------------
 # ------------------
 def normaliza(X):
-
-    media = []
-    desvio = []
+    maximos = []
+    minimos = []
 
     for i in range(len(X[0])):
-        media.append(np.mean(X[:, i]))
-        desvio.append(np.std(X[:, i]))
+        maximos.append(max(X[:, i]))
+        minimos.append(min(X[:, i]))
 
     for i in range(len(X)):
 
         for j in range(len(X[0])):
-            X[i, j] = (X[i, j] - media[j]) / desvio[j]
+            X[i, j] = (X[i, j] - minimos[j]) / (maximos[j] - minimos[j])
 
 
     return X
@@ -232,25 +265,25 @@ def remove_coluna(X, index):
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
 shape_view = normaliza(shape_view)
 
-rgb_view = normaliza(rgb_view)
+#rgb_view = normaliza(rgb_view)
 
-complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
-complet_view = normaliza(complet_view)
+#complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
+#complet_view = normaliza(complet_view)
 
-# --------------------------------------------------------------
-
-
-
+# ------------------- Inicializando ---------------------
 centroides = gerar_centroides(shape_view, 7)
-p = calcula_p(shape_view, centroides)
 s2 = inicializa_s2(shape_view)
 y = get_y(s2)
-novo_s2 = atualiza_s2(p, centroides, s2, y)
-
+p = calcula_p(shape_view, centroides, s2)
+# ------------------- Treinando -------------------------
+print("s2 antigos")
 print(s2)
-print(novo_s2)
-##centroides = gerar_centroides(shape_view, 7)
-##p = calcula_p(shape_view, centroides)
+centroides = atualiza_centroides(p, centroides, s2)
+s2 = atualiza_s2(p, centroides, s2, y)
+print("s2 novos")
+print(s2)
+# -------------------------------------------------------
+
 ##
 ##pca = PCA(n_components=2)
 ##pca = pca.fit(shape_view)
