@@ -319,6 +319,54 @@ def remove_coluna(X, index):
 
     return np.concatenate([part1, part2], axis=1)
 # ------------------
+# ------------------
+def inicializa_modelo(base, numero_classes):
+    centroides = gerar_centroides(base, numero_classes)
+    s2 = inicializa_s2(base)
+    y = get_y(s2)
+    p = calcula_p(base, centroides, s2)
+
+    return centroides, s2, y, p
+# ------------------
+# ------------------
+def treinar_modelo(base, numero_classes, numero_holdouts):
+
+    centroides_result = []
+    p_result = {}
+    s2_result = []
+    objetivo_result = 0
+
+    # Holdouts
+    for i in range(numero_holdouts):
+
+        # --- Inicializando ---
+        centroides, s2, y, p = inicializa_modelo(base, numero_classes)
+
+        # --- Treinando ---
+        atualizacoes = 1
+
+        while (atualizacoes > 0):
+            centroides = atualiza_centroides(p, centroides, s2)
+            s2 = atualiza_s2(p, centroides, s2, y)
+            p, atualizacoes = atualiza_p(p, centroides, s2)
+            objetivo = funcao_objetivo(p, centroides, s2)
+        # ------------
+
+        if (i == 0):
+            centroides_result = centroides
+            p_result = p
+            s2_result = s2
+            objetivo_result = objetivo
+        elif ( objetivo < objetivo_result):
+            centroides_result = centroides
+            p_result = p
+            s2_result = s2
+            objetivo_result = objetivo
+
+
+    return centroides_result, p_result, s2_result, objetivo_result
+
+# ------------------
 
 # ------------------ Preparando Dados ------------------
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
@@ -329,40 +377,17 @@ shape_view = normaliza(shape_view)
 #complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
 #complet_view = normaliza(complet_view)
 
-# ------------------- Inicializando ---------------------
-centroides = gerar_centroides(shape_view, 7)
-s2 = inicializa_s2(shape_view)
-y = get_y(s2)
-p = calcula_p(shape_view, centroides, s2)
-imprime_p(p)
-print("s2 inicializado")
-print(s2)
+
 # ------------------- Treinando -------------------------
 
-atualizacoes = 1
+centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(shape_view, 7, 100)
 
-while(atualizacoes>0):
-
-    centroides = atualiza_centroides(p, centroides, s2)
-    s2 = atualiza_s2(p, centroides, s2, y)
-    p, atualizacoes = atualiza_p(p, centroides, s2)
-
-    print("atualizações: ", atualizacoes)
-    print("Função objetivo: ", funcao_objetivo(p, centroides, s2))
-    #print("s2: ", s2)    
-    #imprime_p(p)
+print("centroides: ", centroides_result)
+print("s2: ", s2_result)
+imprime_p(p_result)
+print("Função objetivo: ", objetivo_result)
     
 
-#print("---------- Treinamento terminado ---------")
-#print("Centroides:")
-#print(centroides)
-#print()
-#print("Hyper-Parametros - s2")
-#print(s2)
-#print()
-
-
-# olhar função de atualizar o s2
 # -------------------------------------------------------
 
 ##
