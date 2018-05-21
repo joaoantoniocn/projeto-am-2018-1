@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 import random
 from random import randint
+from sklearn import preprocessing
 
 # ------------------ Load database ---------------
 base = np.genfromtxt('../base/segmentation.test',delimiter=',', dtype=np.str)
@@ -367,7 +368,15 @@ def treinar_modelo(base, numero_classes, numero_holdouts):
     return centroides_result, p_result, s2_result, objetivo_result
 
 # ------------------
+# ------------------
+def ari(p, base, labels):
+    result = 0
 
+    base = np.ndarray.tolist(base)
+    classe = labels(base.index(p[0][0])) # exemplo de como pegar a classe
+
+    return result
+# ------------------
 # ------------------ Preparando Dados ------------------
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
 shape_view = normaliza(shape_view)
@@ -377,10 +386,12 @@ shape_view = normaliza(shape_view)
 #complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
 #complet_view = normaliza(complet_view)
 
-
+labels_transform = preprocessing.LabelEncoder()
+labels_transform.fit(labels)
+labels_n = labels_transform.transform(labels) # Labels numericos
 # ------------------- Treinando -------------------------
 
-centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(shape_view, 7, 100)
+centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(shape_view, 7, 1)
 
 print("centroides: ", centroides_result)
 print("s2: ", s2_result)
