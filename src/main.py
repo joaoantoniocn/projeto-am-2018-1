@@ -383,7 +383,7 @@ def ari(p, base, labels_n):
     for cluster in range(len(p)):
         for amostra in range(len(p[cluster])):
             classe = labels_n[base.index(p[cluster][amostra])]
-            matriz[classe][cluster] += 1
+            contingency_table[classe][cluster] += 1
 
     index = 0
     expected_index = 0
@@ -392,8 +392,19 @@ def ari(p, base, labels_n):
     for i in range(len(contingency_table)):
         for j in range(len(contingency_table)):
             index += combinacao(contingency_table[i][j]) 
+
+    linha = 0
+    coluna = 0
+    for i in range(len(contingency_table)):
+        linha += combinacao(sum(contingency_table[i]))
+        coluna += combinacao(sum(contingency_table[:, i]))
+
+    expected_index = (linha * coluna)/ combinacao(len(base))
+    max_index = (linha + coluna) / 2
+
+    result = (index - expected_index)/(max_index - expected_index)
     
-    return matriz
+    return result
 # ------------------
 # ------------------ Preparando Dados ------------------
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
@@ -409,13 +420,15 @@ labels_transform.fit(labels)
 labels_n = labels_transform.transform(labels) # Labels numericos
 # ------------------- Treinando -------------------------
 
-centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(shape_view, 7, 1)
+base = shape_view
+
+centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(base, 7, 100)
 
 print("centroides: ", centroides_result)
 print("s2: ", s2_result)
 imprime_p(p_result)
 print("Função objetivo: ", objetivo_result)
-    
+print("ARI: ", ari(p_result, base, labels_n))    
 
 # -------------------------------------------------------
 
