@@ -369,13 +369,31 @@ def treinar_modelo(base, numero_classes, numero_holdouts):
 
 # ------------------
 # ------------------
-def ari(p, base, labels):
+def combinacao(n):
+    return (n*(n-1))/2
+
+def ari(p, base, labels_n):
     result = 0
 
     base = np.ndarray.tolist(base)
-    classe = labels(base.index(p[0][0])) # exemplo de como pegar a classe
+     # exemplo de como pegar a classe
 
-    return result
+    contingency_table = np.zeros([len(p), len(p)])
+
+    for cluster in range(len(p)):
+        for amostra in range(len(p[cluster])):
+            classe = labels_n[base.index(p[cluster][amostra])]
+            matriz[classe][cluster] += 1
+
+    index = 0
+    expected_index = 0
+    max_index = 0
+    
+    for i in range(len(contingency_table)):
+        for j in range(len(contingency_table)):
+            index += combinacao(contingency_table[i][j]) 
+    
+    return matriz
 # ------------------
 # ------------------ Preparando Dados ------------------
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
