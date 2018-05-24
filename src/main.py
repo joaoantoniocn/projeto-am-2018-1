@@ -422,7 +422,7 @@ labels_n = labels_transform.transform(labels) # Labels numericos
 
 base = shape_view
 
-centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(base, 7, 100)
+centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(base, 7, 1 )
 
 print("centroides: ", centroides_result)
 print("s2: ", s2_result)
