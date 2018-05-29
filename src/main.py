@@ -291,9 +291,15 @@ def atualiza_p(p, centroides, s2):
 # ------------------
 # ------------------
 def imprime_p(p):
-    print("Quantidade de elementos por particao")
+
+    texto = "Quantidade de elementos por grupo"
+    #print(texto)
+
     for i in range(len(p)):
-        print("Particao ", i, ": ", len(p[i]))
+        #print("Particao ", i, ": ", len(p[i]))
+        texto += "\n Partição " + str(i) + ": " + str(len(p[i]))
+
+    return texto
 # ------------------
 # ------------------
 def normaliza(X):
@@ -406,40 +412,55 @@ def ari(p, base, labels_n):
     
     return result
 # ------------------
+# ------------------
+def get_lista_objetos(p, base):
+    lista = {}
+    base = np.ndarray.tolist(base)
+
+    for i in range(len(p)):
+        lista[i] = []
+        for j in range(len(p[i])):
+            lista[i].append(base.index(p[i][j]))
+
+
+    return lista
+
+# ------------------
+# ------------------
+def run(base, path, holdouts):
+# treina os modelos e escreve o resultado no arquivo com endereço indicado na variavel 'path'
+
+    # Treinando
+    centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(base, 7, holdouts)
+
+    # Escrevendo Resultados
+    arq = open(path,  'w')
+    arq.write("centroides: " + str(centroides_result) + "\n \n")
+    arq.write(imprime_p(p_result))
+    arq.write("\n \n hyperparametros: " + str(s2_result) + "\n \n")
+    arq.write("Lista de objetos por grupo: " + str(get_lista_objetos(p_result, base)) + "\n \n")
+    arq.write("Indice de Rand Corrigido: " + str(ari(p_result, base, labels_n)) + "\n")
+    arq.close()
+
+# ------------------
 # ------------------ Preparando Dados ------------------
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
 shape_view = normaliza(shape_view)
 
-#rgb_view = normaliza(rgb_view)
+rgb_view = normaliza(rgb_view)
 
-#complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
-#complet_view = normaliza(complet_view)
+complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
+complet_view = normaliza(complet_view)
 
 labels_transform = preprocessing.LabelEncoder()
 labels_transform.fit(labels)
 labels_n = labels_transform.transform(labels) # Labels numericos
 # ------------------- Treinando -------------------------
 
-base = shape_view
+holdouts = 100
 
-centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(base, 7, 1 )
+run(shape_view, '../resultados/shape_view.txt', holdouts)
+run(rgb_view, '../resultados/rgb_view.txt',holdouts)
+run(complet_view, '../resultados/complet_view.txt', holdouts)
 
-print("centroides: ", centroides_result)
-print("s2: ", s2_result)
-imprime_p(p_result)
-print("Função objetivo: ", objetivo_result)
-print("ARI: ", ari(p_result, base, labels_n))    
-
-# -------------------------------------------------------
-
-##
-##pca = PCA(n_components=2)
-##pca = pca.fit(shape_view)
-##
-##for i in range(len(p)):
-##    p_i = pca.transform(p[i])
-##    p_a = np.array(p_i)
-##    plt.plot(p_a[:,0], p_a[:,1], 'ro', linewidth=0.03)
-##    plt.plot(p_a[0][0], p_a[0][1], 'g^', linewidth=0.03)
-##    
-##plt.show()
+print("Finalizado")
