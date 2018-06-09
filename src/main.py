@@ -460,7 +460,10 @@ labels_n = labels_transform.transform(labels) # Labels numericos
 holdouts = 100
 
 run(shape_view, '../resultados/shape_view.txt', holdouts)
-run(rgb_view, '../resultados/rgb_view.txt',holdouts)
-run(complet_view, '../resultados/complet_view.txt', holdouts)
+print("Finalizado Shape_view")
 
-print("Finalizado")
+run(rgb_view, '../resultados/rgb_view.txt',holdouts)
+print("Finalizado RGB_View")
+
+run(complet_view, '../resultados/complet_view.txt', holdouts)
+print("Finalizado Complet_view")
