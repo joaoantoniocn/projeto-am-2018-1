@@ -445,12 +445,12 @@ def run(base, path, holdouts):
 # ------------------
 # ------------------ Preparando Dados ------------------
 shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
-shape_view = normaliza(shape_view)
+#shape_view = normaliza(shape_view)
 
-rgb_view = normaliza(rgb_view)
+#rgb_view = normaliza(rgb_view)
 
 complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
-complet_view = normaliza(complet_view)
+#complet_view = normaliza(complet_view)
 
 labels_transform = preprocessing.LabelEncoder()
 labels_transform.fit(labels)
@@ -459,11 +459,11 @@ labels_n = labels_transform.transform(labels) # Labels numericos
 
 holdouts = 100
 
-run(shape_view, '../resultados/shape_view.txt', holdouts)
+run(shape_view, '../resultados/shape_view_nao_normalizado.txt', holdouts)
 print("Finalizado Shape_view")
 
-run(rgb_view, '../resultados/rgb_view.txt',holdouts)
+run(rgb_view, '../resultados/rgb_view_nao_normalizado.txt',holdouts)
 print("Finalizado RGB_View")
 
-run(complet_view, '../resultados/complet_view.txt', holdouts)
+run(complet_view, '../resultados/complet_view_nao_normalizado.txt', holdouts)
 print("Finalizado Complet_view")

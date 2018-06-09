@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef3a744-197a-4b65-af04-0f7f6ad8c82c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultados/complet_view.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultados/rgb_view.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resultados/rgb_view.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultados/shape_view.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resultados/shape_view.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +19,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
+            <state relative-caret-position="559">
+              <caret line="467" column="61" selection-start-line="467" selection-start-column="61" selection-end-line="467" selection-end-column="61" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -152,12 +148,12 @@
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49720672" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49720672" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948583" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948583" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32879582" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24868836" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24868836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32948583" />
       <window_info id="Favorites" order="2" sideWeight="0.5027933" side_tool="true" weight="0.25" />
@@ -186,6 +182,16 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6900">
+          <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6795">
@@ -397,13 +403,10 @@
         <state relative-caret-position="-765" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resultados/shape_view.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
+        <state relative-caret-position="559">
+          <caret line="467" column="61" selection-start-line="467" selection-start-column="61" selection-end-line="467" selection-end-column="61" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
