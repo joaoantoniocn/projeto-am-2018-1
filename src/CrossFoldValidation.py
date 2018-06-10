@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import pickle
 
 class CrossFoldValidation:
 
@@ -53,8 +54,9 @@ class CrossFoldValidation:
                     del base_separada[classe][indice]
 
         # gravando folder em arquivo
-        arq = open(path, 'w')
-        arq.write(str(folders))
+        arq = open(path, 'wb')
+        #arq.write(str(folders))
+        pickle.dump(folders, arq)
         arq.close()
 
         return folders
