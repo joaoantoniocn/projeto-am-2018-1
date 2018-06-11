@@ -70,21 +70,65 @@ class CrossFoldValidation:
 
         return folders
 
-    def separa_treino_teste(self, folders, indice_teste):
+#    def separa_treino_teste(self, folders, indice_teste):
+
+#        treino = {}
+#        teste = {}
+
+ #       for folder in range(len(folders)):
+ #           for classe in range(len(folders[folder])):
+
+#                if (classe not in treino):
+#                   treino[classe] = []
+#                    teste[classe] = []
+
+ #               for amostra in range(len(folders[folder][classe])):
+ #                   if (folder != indice_teste):
+ #                       treino[classe].append(folders[folder][classe][amostra])
+ #                   else:
+ #                       teste[classe].append(folders[folder][classe][amostra])
+ #       return treino, teste
+
+    def separa_treino_teste(folders, indice_teste, remove_col, indice_validacao):
 
         treino = {}
         teste = {}
+        validacao = {}
 
-        for folder in range(len(folders)):
-            for classe in range(len(folders[folder])):
+        if (remove_col == 1):
+            for folder in range(len(folders)):
+                for classe in range(len(folders[folder])):
 
-                if (classe not in treino):
-                    treino[classe] = []
-                    teste[classe] = []
+                    if (classe not in treino):
+                        treino[classe] = []
+                        teste[classe] = []
+                        validacao[classe] = []
 
-                for amostra in range(len(folders[folder][classe])):
-                    if (folder != indice_teste):
-                        treino[classe].append(folders[folder][classe][amostra])
-                    else:
-                        teste[classe].append(folders[folder][classe][amostra])
-        return treino, teste
+                    for amostra in range(len(folders[folder][classe])):
+                        if (folder == indice_teste):
+                            # np.delete(a, 1, 0)
+                            teste[classe].append(np.delete(folders[folder][classe][amostra], 2, 0))
+
+                        elif((folder == indice_validacao[0]) || (folder == indice_validacao[1])):
+                            validacao[classe].append(np.delete(folders[folder][classe][amostra], 2, 0))
+                        else:
+                            treino[classe].append(np.delete(folders[folder][classe][amostra], 2, 0))
+        else:
+            for folder in range(len(folders)):
+                for classe in range(len(folders[folder])):
+
+                    if (classe not in treino):
+                        treino[classe] = []
+                        teste[classe] = []
+                        validacao[classe] = []
+
+                    for amostra in range(len(folders[folder][classe])):
+                        if (folder == indice_teste):
+                            # np.delete(a, 1, 0)
+                            teste[classe].append(folders[folder][classe][amostra])
+                        elif ((folder == indice_validacao[0]) | | (folder == indice_validacao[1])):
+                            validacao[classe].append(folders[folder][classe][amostra])
+                        else:
+                            treino[classe].append(folders[folder][classe][amostra])
+
+        return treino, teste, validacao
