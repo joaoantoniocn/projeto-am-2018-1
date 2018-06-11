@@ -25,14 +25,15 @@ labels_n = labels_transform.transform(labels) # Labels numericos
 # ------------------
 
 
+cross = CrossFoldValidation(shape_view, labels_n, 10)
+folders = cross.gerar_folders('../folders/test.txt')
 
-for i in range(30):
-
-    cross = CrossFoldValidation(shape_view, labels_n, 10)
-    folders = cross.gerar_folders('../folders/shape_view_' + str(i) + '.txt')
+treino, teste = cross.separa_treino_teste(folders, 0)
 
 
-# como ler os arquivos gerados
-#arq = open('../folders/test.txt','rb') #abrir o arquivo para leitura - o "b" significa que o arquivo é binário
-#dic = pickle.load(arq)#Ler a stream a partir do arquivo e reconstroi o objeto original.
-#arq.close()
+#for i in range(30):
+
+#    cross = CrossFoldValidation(shape_view, labels_n, 10)
+#    folders = cross.gerar_folders('../folders/shape_view_' + str(i) + '.txt')
+
+

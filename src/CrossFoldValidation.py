@@ -72,14 +72,19 @@ class CrossFoldValidation:
 
     def separa_treino_teste(self, folders, indice_teste):
 
-        treino = []
-        teste = []
+        treino = {}
+        teste = {}
 
-        for folder in range(folders):
-            for classe in range(folders[folder]):
-                for amostra in range(folders[folder][classe][amostra]):
+        for folder in range(len(folders)):
+            for classe in range(len(folders[folder])):
+
+                if (classe not in treino):
+                    treino[classe] = []
+                    teste[classe] = []
+
+                for amostra in range(len(folders[folder][classe])):
                     if (folder != indice_teste):
-                        treino.append(folders[folder][classe][amostra])
+                        treino[classe].append(folders[folder][classe][amostra])
                     else:
-                        teste.append(folders[folder][classe][amostra])
+                        teste[classe].append(folders[folder][classe][amostra])
         return treino, teste
