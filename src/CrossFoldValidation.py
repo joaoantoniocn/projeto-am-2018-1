@@ -60,3 +60,26 @@ class CrossFoldValidation:
         arq.close()
 
         return folders
+
+
+    def get_folders_from_file(self, path):
+
+        arq = open(path,'rb') #abrir o arquivo para leitura - o "b" significa que o arquivo é binário
+        folders = pickle.load(arq)#Ler a stream a partir do arquivo e reconstroi o objeto original.
+        arq.close()
+
+        return folders
+
+    def separa_treino_teste(self, folders, indice_teste):
+
+        treino = []
+        teste = []
+
+        for folder in range(folders):
+            for classe in range(folders[folder]):
+                for amostra in range(folders[folder][classe][amostra]):
+                    if (folder != indice_teste):
+                        treino.append(folders[folder][classe][amostra])
+                    else:
+                        teste.append(folders[folder][classe][amostra])
+        return treino, teste
