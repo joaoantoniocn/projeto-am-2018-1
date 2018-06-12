@@ -2,8 +2,98 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef3a744-197a-4b65-af04-0f7f6ad8c82c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_27.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_28.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_29.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/complet_view_9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_27.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_28.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_29.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/rgb_view_9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_27.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_28.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_29.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folders/shape_view_9.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrossFoldValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrossFoldValidation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,23 +107,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CrossFoldValidation.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CrossFoldValidation.py">
+      <file leaf-file-name="kcm_k_gh.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kcm_k_gh.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="89" column="2" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="2" />
+            <state relative-caret-position="349">
+              <caret line="327" column="20" lean-forward="true" selection-start-line="320" selection-end-line="327" selection-end-column="20" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="394">
+              <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -41,13 +131,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gnb_final.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gnb_final.py">
+      <file leaf-file-name="CrossFoldValidation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CrossFoldValidation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="128" column="24" lean-forward="true" selection-start-line="96" selection-end-line="128" selection-end-column="24" />
+            <state relative-caret-position="259">
+              <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +169,8 @@
         <option value="$PROJECT_DIR$/base/segmentation.test" />
         <option value="$PROJECT_DIR$/resultados/shape_view.txt" />
         <option value="$PROJECT_DIR$/src/cross_fold_validation.py" />
-        <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/src/CrossFoldValidation.py" />
+        <option value="$PROJECT_DIR$/src/main.py" />
       </list>
     </option>
   </component>
@@ -215,13 +305,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/CrossFoldValidation.py</url>
-          <line>107</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -477,25 +560,6 @@
         <state relative-caret-position="-840" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resultados/rgb_view.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resultados/shape_view.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="13" column="2231" selection-start-line="13" selection-start-column="2231" selection-end-line="13" selection-end-column="2231" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resultados/complet_view.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="13" column="400" selection-start-line="13" selection-start-column="400" selection-end-line="13" selection-end-column="400" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parzen_windows_kernel_density_estimation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -531,23 +595,6 @@
     <entry file="file://$PROJECT_DIR$/folders/shape_view_6.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/folders/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gnb_final.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -558,10 +605,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resultados/complet_view.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret line="13" column="400" selection-start-line="13" selection-start-column="400" selection-end-line="13" selection-end-column="400" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resultados/shape_view.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="13" column="7293" lean-forward="true" selection-start-line="13" selection-start-column="7293" selection-end-line="13" selection-end-column="7293" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resultados/rgb_view.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-751" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/folders/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kcm_k_gh.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="436" column="7" selection-start-line="436" selection-start-column="4" selection-end-line="436" selection-end-column="7" />
+        <state relative-caret-position="349">
+          <caret line="327" column="20" lean-forward="true" selection-start-line="320" selection-end-line="327" selection-end-column="20" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -570,10 +643,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CrossFoldValidation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="89" column="2" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="2" />
+        <state relative-caret-position="259">
+          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
