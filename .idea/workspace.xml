@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef3a744-197a-4b65-af04-0f7f6ad8c82c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultados/rgb_view_nao_normalizado2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resultados/rgb_view_nao_normalizado2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/complet_view.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/complet_view2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/complet_view_nao_normalizado.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/complet_view_nao_normalizado2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/rgb_view.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/rgb_view2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/rgb_view_nao_normalizado.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/rgb_view_nao_normalizado2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/shape_view.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/shape_view2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/shape_view_nao_normalizado.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/shape_view_nao_normalizado2.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="kcm_k_gh.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kcm_k_gh.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kcm_k_gh.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4124">
-              <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+            <state relative-caret-position="-1556">
+              <caret line="347" column="58" selection-start-line="347" selection-start-column="58" selection-end-line="347" selection-end-column="58" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -29,11 +39,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rgb_view_nao_normalizado2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resultados/rgb_view_nao_normalizado2.txt">
+      <file leaf-file-name="kcm_k_gh_complet_view.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resultados/kcm_k_gh_complet_view.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="17" column="1843" selection-start-line="17" selection-start-column="1843" selection-end-line="17" selection-end-column="1843" />
+            <state relative-caret-position="-116">
+              <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrossFoldValidation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CrossFoldValidation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-986">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -180,11 +207,11 @@
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496875" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.496875" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948583" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32948583" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="9" visible="true" weight="0.32738718" />
+      <window_info anchor="bottom" id="Python Console" order="9" visible="true" weight="0.32738718" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.24868836" />
       <window_info id="Structure" order="1" sideWeight="0.503125" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32948583" />
@@ -215,13 +242,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kcm_k_gh.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4905">
@@ -431,13 +451,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/folders/test.txt" />
-    <entry file="file://$PROJECT_DIR$/src/CrossFoldValidation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/preprocessing/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -445,13 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -538,15 +544,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrossFoldValidation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-986">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kcm_k_gh.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4124">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+        <state relative-caret-position="-1556">
+          <caret line="347" column="58" selection-start-line="347" selection-start-column="58" selection-end-line="347" selection-end-column="58" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resultados/kcm_k_gh_complet_view.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
