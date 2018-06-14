@@ -5,9 +5,12 @@ from sklearn.decomposition import PCA
 import random
 from random import randint
 from sklearn import preprocessing
+import time
 
 # ------------------ Load database ---------------
+print("carregando base de dados")
 base = np.genfromtxt('../base/segmentation.test',delimiter=',', dtype=np.str)
+print("base de dados carregada")
 # ------------------ 
 
 # ------------------ Separate database ---------------
@@ -342,10 +345,13 @@ def treinar_modelo(base, numero_classes, numero_holdouts):
     p_result = {}
     s2_result = []
     objetivo_result = 0
+    tempo = [] # array com o tempo de execução em segundos de cada holdout
 
     # Holdouts
     for i in range(numero_holdouts):
 
+        # contando tempo em segundos
+        inicio = time.time()
         # --- Inicializando ---
         centroides, s2, y, p = inicializa_modelo(base, numero_classes)
 
@@ -370,8 +376,10 @@ def treinar_modelo(base, numero_classes, numero_holdouts):
             s2_result = s2
             objetivo_result = objetivo
 
+        final = time.time()
+        tempo.append(final-inicio)
 
-    return centroides_result, p_result, s2_result, objetivo_result
+    return centroides_result, p_result, s2_result, objetivo_result, tempo
 
 # ------------------
 # ------------------
@@ -431,7 +439,7 @@ def run(base, path, holdouts):
 # treina os modelos e escreve o resultado no arquivo com endereço indicado na variavel 'path'
 
     # Treinando
-    centroides_result, p_result, s2_result, objetivo_result = treinar_modelo(base, 7, holdouts)
+    centroides_result, p_result, s2_result, objetivo_result, tempo_execucao = treinar_modelo(base, 7, holdouts)
 
     # Escrevendo Resultados
     arq = open(path,  'w')
@@ -439,18 +447,23 @@ def run(base, path, holdouts):
     arq.write(imprime_p(p_result))
     arq.write("\n \n hyperparametros: " + str(s2_result) + "\n \n")
     arq.write("Lista de objetos por grupo: " + str(get_lista_objetos(p_result, base)) + "\n \n")
+    arq.write("Função Objetivo: " + str(objetivo_result) + "\n \n")
+    arq.write("Tempo de Execução: " + str(tempo_execucao) + "\n \n")
     arq.write("Indice de Rand Corrigido: " + str(ari(p_result, base, labels_n)) + "\n")
     arq.close()
 
 # ------------------
 # ------------------ Preparando Dados ------------------
-shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
+#shape_view = remove_coluna(shape_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
+#print("normalizando shape view")
 #shape_view = normaliza(shape_view)
 
+#print("normalizando rgb_view")
 #rgb_view = normaliza(rgb_view)
 
 complet_view = remove_coluna(complet_view, 2) # Removendo coluna 2, os valores dessa coluna são os mesmos para todas as amostras
-#complet_view = normaliza(complet_view)
+#print("normalizando complet view")
+complet_view = normaliza(complet_view)
 
 labels_transform = preprocessing.LabelEncoder()
 labels_transform.fit(labels)
@@ -459,11 +472,14 @@ labels_n = labels_transform.transform(labels) # Labels numericos
 
 holdouts = 100
 
-run(shape_view, '../resultados/shape_view_nao_normalizado.txt', holdouts)
-print("Finalizado Shape_view")
+#print("Começando a rodar a base Shape_View")
+#run(shape_view, '../resultados/shape_view_nao_normalizado2.txt', holdouts)
+#print("Finalizado Shape_view")
 
-run(rgb_view, '../resultados/rgb_view_nao_normalizado.txt',holdouts)
-print("Finalizado RGB_View")
+#print("Começando a rodar a base RGB_View")
+#run(rgb_view, '../resultados/rgb_view_nao_normalizado2.txt',holdouts)
+#print("Finalizado RGB_View")
 
-run(complet_view, '../resultados/complet_view_nao_normalizado.txt', holdouts)
+print("Começando a rodar a base complet view")
+run(complet_view, '../resultados/complet_view2.txt', holdouts)
 print("Finalizado Complet_view")

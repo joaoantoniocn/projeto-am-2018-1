@@ -57,10 +57,9 @@ labels_n = labels_transform.transform(labels) # Labels numericos
 
 #treino, teste, validacao = cross.separa_treino_teste(folders, 0, indice_validacao)
 
+#for i in range(30):
 
-for i in range(30):
-
-    cross = CrossFoldValidation(complet_view, labels_n, 10)
-    folders = cross.gerar_folders('../folders/complet_view_' + str(i) + '.txt')
+#    cross = CrossFoldValidation(com_view, labels_n, 10)
+#    folders = cross.gerar_folders('../folders/complet_view_' + str(i) + '.txt')
 
 
